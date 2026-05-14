@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>منصة الاختبارات | تقييم معرفي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- شاشة البداية -->
+    <div class="screen start-screen" id="start-screen">
+      <div class="card start-card">
+        <div class="start-header">
+          <div>
+            <span class="badge">مرحباً بك</span>
+            <h1>جاهز لتختبر معرفتك؟</h1>
+            <p class="description">اختبار تفاعلي مع أسئلة "صح/خطأ" و"اختيار من متعدد". يمكنك التنقل بين الأسئلة، وستظهر النتيجة مفصلة.</p>
+          </div>
+          <button class="icon-btn demo-btn" data-exam="certificateTest" data-password="FUF" aria-label="تجربة الشهادة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </button>
+        </div>
+        <div class="stats-row">
+          <div class="stat-card"><span class="stat-num" id="start-total-questions">100</span><span class="stat-label">سؤالاً</span></div>
+          <div class="stat-card"><span class="stat-num">2</span><span class="stat-label">نوعا أسئلة</span></div>
+          <div class="stat-card"><span class="stat-num">90%</span><span class="stat-label">للشهادة</span></div>
+        </div>
+        <div class="info-message">عند تحقيق 90% أو أكثر، ستصبح شهادة PDF متاحة باسمك.</div>
+        <div class="exams-grid">
+          <button class="exam-item" data-exam="web">
+            <strong>📘 امتحان الفصل الأول</strong>
+            <small>المحتوى الرقمي - 50 سؤال</small>
+          </button>
+          <button class="exam-item" data-exam="general">
+            <strong>📙 امتحان الفصل الثاني</strong>
+            <small>نظم إدارة التعلم - 50 سؤال</small>
+          </button>
+          <button class="exam-item" data-exam="psychMedium">
+            <strong>📕 امتحان الفصل الثالث</strong>
+            <small>غير متوفر حالياً</small>
+          </button>
+          <button class="exam-item" data-exam="psychHard">
+            <strong>📗 امتحان الفصل الرابع</strong>
+            <small>غير متوفر حالياً</small>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- شاشة الاختبار -->
+    <div class="screen quiz-screen hidden" id="quiz-screen">
+      <div class="card quiz-card">
+        <div class="quiz-header">
+          <div><span class="badge">اختبار تفاعلي</span><h2 id="quiz-title">عنوان الامتحان</h2></div>
+          <div class="header-actions">
+            <div class="q-counter" id="question-counter">السؤال 1 من 0</div>
+            <button class="icon-btn home-icon" id="home-icon" aria-label="الرئيسية">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-5v-5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v5H5a2 2 0 0 1-2-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="progress-section">
+          <div class="progress-meta"><span id="q-type-label">نوع السؤال</span><span id="score-value">0 نقطة</span></div>
+          <div class="progress-bar-bg"><div class="progress-fill" id="progress-fill"></div></div>
+        </div>
+        <div class="question-area" id="question-area">
+          <p class="question-text" id="question-text"></p>
+          <div class="options-list" id="options-list"></div>
+          <div class="feedback-msg" id="feedback-msg"></div>
+        </div>
+        <div class="action-bar">
+          <div class="left-buttons">
+            <button class="btn-outline" id="restart-quiz">↻ إعادة الاختبار</button>
+            <button class="btn-outline" id="explanation-trigger">تعليل</button>
+          </div>
+          <div class="right-buttons">
+            <button class="btn-secondary" id="prev-question">السابق</button>
+            <button class="btn-primary" id="next-question">التالي</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- الشريط الجانبي (يظهر أثناء الاختبار فقط) -->
+    <div class="screen side-screen hidden" id="side-screen">
+      <div class="stat-card-sm"><span id="answered-counter">0</span> تمت الإجابة</div>
+      <div class="stat-card-sm"><span id="correct-counter">0</span> إجابات صحيحة</div>
+    </div>
+
+    <!-- لوحة الشهادة -->
+    <div class="screen certificate-screen hidden" id="certificate-screen">
+      <div class="card cert-card">
+        <div class="cert-header"><span class="badge">تهانينا</span><h3>لقد اجتزت الاختبار بنجاح</h3></div>
+        <div class="cert-form">
+          <input type="text" id="student-fullname" placeholder="اكتب اسمك للحصول على الشهادة" autocomplete="name">
+          <button class="btn-primary" id="download-certificate-btn">تحميل PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="results-container"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="certificate-template.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
