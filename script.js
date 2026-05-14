@@ -25,7 +25,7 @@ const choiceQuestions = (items) =>
     explanation,
   }));
 
-// ========== الامتحان الأول (الفصل الأول - محتوى رقمي) ==========
+// ========== تعريف الأسئلة (الامتحان الأول والثاني) ==========
 const firstTermTrueFalse = [
   ["يعتبر المحتوى التعليمي الرقمي مجرد نسخة إلكترونية تفاعلية من الكتب المدرسية التقليدية.", "غلط", "المحتوى الرقمي ليس مجرد كتاب، بل مزيج من المصادر والأنشطة التفاعلية."],
   ["خاصية 'إعادة الاستخدام' في المحتوى الرقمي تعني إمكانية تعديل المعلومة دون تغيير المحتوى بالكامل.", "غلط", "هذا تعريف 'التعديل'، أما إعادة الاستخدام فتعني استخدام العنصر في أكثر من مقرر."],
@@ -36,7 +36,7 @@ const firstTermTrueFalse = [
   ["ترتيب الموضوعات في المدونات التعليمية يعتمد على الأهمية العلمية.", "غلط", "الترتيب يكون زمنياً (الأحدث أولاً)."],
   ["الفيديو التعليمي يتفوق على الكتاب في قدرته على 'تجسيد' المعلومة واقعياً.", "صح", "الكتاب 'يحكي' التجربة، والفيديو 'يجسدها'."],
   ["الرسومات المتحركة هي الأنسب لشرح العمليات التي تفتقر للحركة.", "غلط", "هي الأفضل لشرح العمليات التي تحتوي على خطوات وحركة."],
-  ["خاصية 'التركيز' في الصور التعليمية تقلل المشتتات وتسلط الضوء على العناصر المهمة.", "صح", "الصورة تركز على جوهر الدرس."],
+  ["خاصية 'التركيز' في الصور التعليمية تقلل المشتتات وتسليط الضوء على العناصر المهمة.", "صح", "الصورة تركز على جوهر الدرس."],
   ["التدوين الصوتي (Podcast) يتطلب اتصالاً دائمًا بالإنترنت.", "غلط", "يمكن تحميل الملفات واستماعها دون إنترنت."],
   ["التسجيلات الصوتية هي الوسيلة المثالية لتعلم اللغات والنطق الصحيح.", "صح", "تعتمد اللغات على السمع والنطق."],
   ["عنصر 'المنافسة' في الألعاب التعليمية يقتصر على التنافس بين الطلاب فقط.", "غلط", "يمكن أن تكون المنافسة مع النفس أو مع الكمبيوتر."],
@@ -82,7 +82,6 @@ const firstTermChoice = [
   ["الفرق بين المحتوى المقروء والمرئي:", ["المقروء بلا رسوم", "المرئي أسرع جذباً وتبسيطاً", "المقروء لا يتحدّث", "المرئي لا يحتاج إنترنت"], "المرئي أسرع جذباً وتبسيطاً", "الجاذبية البصرية."],
 ];
 
-// ========== الامتحان الثاني (الفصل الثاني - نظم إدارة التعلم) ==========
 const secondTermTrueFalse = [
   ["نظم إدارة التعلم (LMS) هي المسؤول الأول عن تأليف كائنات التعلم.", "غلط", "التأليف وظيفة LCMS."],
   ["LCMS يهدف لخدمة المتعلم بشكل مباشر وليس المطورين.", "غلط", "LCMS يستهدف المطورين."],
@@ -166,6 +165,70 @@ const exams = {
   },
 };
 
+// ========== إضافة تحسينات جمالية وأنيميشن عبر JS ==========
+const styleSheet = document.createElement("style");
+styleSheet.textContent = `
+  /* أنيميشن الانتقال بين الأسئلة */
+  .question-area {
+    animation: fadeSlide 0.3s ease-out;
+  }
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* أنيميشن ظهور الخيارات */
+  .option-btn {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .option-btn:hover:not(:disabled) {
+    transform: translateX(-5px);
+    box-shadow: 0 2px 8px rgba(59,130,246,0.3);
+  }
+  /* أنيميشن للفييدباك */
+  .feedback-msg {
+    animation: fadeScale 0.25s ease-out;
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  /* تحسين شكل الأزرار */
+  .btn-primary, .btn-secondary, .btn-outline {
+    transition: all 0.2s;
+  }
+  .btn-primary:hover, .btn-secondary:hover, .btn-outline:hover {
+    transform: translateY(-2px);
+  }
+  /* شريط التقدم مع تأثير */
+  .progress-fill {
+    transition: width 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+  }
+  @keyframes shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+  }
+  /* تأثير نبض للشهادة */
+  .certificate-screen:not(.hidden) .btn-primary {
+    animation: softGlow 1.2s infinite alternate;
+  }
+  @keyframes softGlow {
+    from { box-shadow: 0 0 5px #10b981; }
+    to { box-shadow: 0 0 18px #10b981; }
+  }
+  /* أنيميشن ظهور النتيجة */
+  .results-panel {
+    animation: fadeUp 0.4s ease;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+`;
+document.head.appendChild(styleSheet);
+
 // ========== عناصر DOM ==========
 const startScreen = document.getElementById('start-screen');
 const quizScreen = document.getElementById('quiz-screen');
@@ -232,9 +295,11 @@ function renderQuestion() {
   answered = saved !== null;
   feedbackMsg.textContent = '';
   feedbackMsg.className = 'feedback-msg';
+  // تمكين/تعطيل الأزرار حسب الحالة
   nextBtn.disabled = !answered;
-  prevBtn.disabled = current === 0;
+  prevBtn.disabled = (current === 0);
   nextBtn.textContent = (current === questions.length - 1) ? 'عرض النتيجة' : 'التالي';
+  
   questionTextEl.textContent = item.text;
   qTypeLabel.textContent = item.type;
   questionCounter.textContent = `السؤال ${current + 1} من ${questions.length}`;
@@ -254,6 +319,12 @@ function renderQuestion() {
 
   hideExplanation();
   if (answered) showSavedAnswer(saved);
+  // إضافة أنيميشن للانتقال (عن طريق إعادة تشغيل الأنيميشن)
+  const qArea = document.querySelector('.question-area');
+  if (qArea) {
+    qArea.style.animation = 'none';
+    setTimeout(() => { qArea.style.animation = 'fadeSlide 0.3s ease-out'; }, 10);
+  }
 }
 
 function lockAnswer(selected) {
@@ -402,7 +473,7 @@ function startExam(examKey) {
   renderQuestion();
 }
 
-// ========== إخفاء العداد الجانبي في البداية ==========
+// إخفاء العداد في البداية
 sideScreen.style.display = 'none';
 
 // ========== أحداث الأزرار ==========
@@ -428,6 +499,11 @@ restartBtn.addEventListener('click', () => {
 
 nextBtn.addEventListener('click', () => {
   if (autoTimeout) clearTimeout(autoTimeout);
+  // التأكد من أنه تم الإجابة على السؤال الحالي
+  if (!answered) {
+    // لا يسمح بالانتقال دون إجابة
+    return;
+  }
   if (current < questions.length - 1) {
     current++;
     renderQuestion();
@@ -447,7 +523,6 @@ prevBtn.addEventListener('click', () => {
 document.querySelectorAll('.exam-item').forEach(btn => {
   btn.addEventListener('click', () => {
     const examKey = btn.dataset.exam;
-    // psychMedium و psychHard غير متوفرين
     if (examKey === 'psychMedium' || examKey === 'psychHard') {
       alert('هذا الامتحان غير متوفر حالياً.');
       return;
@@ -457,7 +532,6 @@ document.querySelectorAll('.exam-item').forEach(btn => {
   });
 });
 
-// زر الاختبار التجريبي (الشهادة)
 document.querySelectorAll('.demo-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const pwd = prompt('كلمة المرور للامتحان التجريبي:');
@@ -466,7 +540,7 @@ document.querySelectorAll('.demo-btn').forEach(btn => {
   });
 });
 
-// ========== كود الشهادة الأصلي ==========
+// ========== كود الشهادة الأصلي (يعمل 100%) ==========
 function fitNameFontSize(ctx, name, maxWidth) {
   let size = 86;
   while (size > 44) {
@@ -535,5 +609,4 @@ function loadImage(src) {
   });
 }
 
-// تحديث عدد الأسئلة في شاشة البداية
 startTotal.textContent = exams.web.questions.length;
