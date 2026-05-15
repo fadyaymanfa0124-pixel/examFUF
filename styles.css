@@ -114,7 +114,7 @@ button, input, textarea, .btn-primary, .btn-secondary, .btn-outline, .option-btn
   transition: 0s;
 }
 
-/* ========== أيقونات SVG باستخدام pseudo-elements ========== */
+/* ========== أيقونات SVG ========== */
 #q-type-label::before {
   content: '';
   display: inline-block;
@@ -176,7 +176,7 @@ button, input, textarea, .btn-primary, .btn-secondary, .btn-outline, .option-btn
   vertical-align: middle;
 }
 
-/* باقي التنسيقات الأساسية (لم تتغير عن السابق) */
+/* باقي التنسيقات الأساسية */
 .start-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
 .badge { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); font-weight: 600; background: rgba(59,130,246,0.15); padding: 0.2rem 0.8rem; border-radius: 1rem; display: inline-block; }
 h1, h2, h3 { margin: 0.5rem 0 0.75rem; font-weight: 700; background: linear-gradient(135deg, #fff, #cbd5e1); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -203,8 +203,7 @@ h1, h2, h3 { margin: 0.5rem 0 0.75rem; font-weight: 700; background: linear-grad
 .progress-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem; }
 .progress-bar-bg { background: #1f2937; border-radius: 999px; height: 6px; overflow: hidden; }
 .question-area { margin: 1rem 0; }
-.question-text { font-size: 1.35rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.6; animation: fadeSlide 0.3s; }
-@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.question-text { font-size: 1.35rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.6; }
 .options-list { display: flex; flex-direction: column; gap: 0.75rem; }
 .option-btn { background: #1f2937; border: 1px solid var(--border-light); border-radius: 0.75rem; padding: 0.85rem 1rem; text-align: right; font-size: 0.95rem; cursor: pointer; transition: var(--transition); color: var(--text-dark); }
 .option-btn:hover:not(:disabled) { background: #374151; border-color: var(--primary); transform: translateX(-4px); }
@@ -238,6 +237,9 @@ h1, h2, h3 { margin: 0.5rem 0 0.75rem; font-weight: 700; background: linear-grad
 .wrong-list { max-height: 350px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem; }
 .wrong-item { background: rgba(239, 68, 68, 0.1); border-right: 4px solid var(--danger); border-radius: 0.75rem; padding: 0.8rem; color: var(--text-dark); transition: var(--transition); }
 .wrong-item:hover { background: rgba(239, 68, 68, 0.2); transform: translateX(-4px); }
+.wrong-details { margin-top: 0.3rem; font-size: 0.85rem; color: var(--text-muted); }
+.wrong-hint { color: #a7f3d0; margin-top: 0.2rem; }
+.wrong-ref { color: #fcd34d; margin-top: 0.2rem; font-size: 0.8rem; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 700px) {
   body { padding: 1rem; }
