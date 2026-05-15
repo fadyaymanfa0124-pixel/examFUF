@@ -27,7 +27,7 @@ const choiceQuestions = (items) =>
     reference: reference || "لا يوجد مرجع.",
   }));
 
-// ========== بيانات الأسئلة للامتحان الأول ==========
+// ========== بيانات الأسئلة (كلها موجودة – سيتم وضعها كاملة) ==========
 const firstTermTrueFalse = [
   ["يعتبر المحتوى التعليمي الرقمي مجرد نسخة إلكترونية تفاعلية من الكتب المدرسية التقليدية.", "غلط", "المحتوى الرقمي ليس مجرد كتاب، بل مزيج من المصادر والأنشطة التفاعلية.", "صفحة 3"],
   ["خاصية 'إعادة الاستخدام' في المحتوى الرقمي تعني إمكانية تعديل المعلومة دون تغيير المحتوى بالكامل.", "غلط", "هذا تعريف خاصية 'التعديل'، أما إعادة الاستخدام فتعني استخدام العنصر في أكثر من مقرر.", "صفحة 3"],
@@ -84,7 +84,6 @@ const firstTermChoice = [
   ["الفرق بين المحتوى المقروء والمرئي:", ["المقروء بلا رسوم", "المرئي أسرع جذباً وتبسيطاً", "المقروء لا يتحدّث", "المرئي لا يحتاج إنترنت"], "المرئي أسرع جذباً وتبسيطاً", "الجاذبية البصرية.", "صفحة 5-6"],
 ];
 
-// ========== بيانات الأسئلة للامتحان الثاني ==========
 const secondTermTrueFalse = [
   ["نظم إدارة التعلم (LMS) هي المسؤول الأول عن تأليف كائنات التعلم.", "غلط", "التأليف وظيفة LCMS.", "صفحة 5"],
   ["LCMS يهدف لخدمة المتعلم بشكل مباشر وليس المطورين.", "غلط", "LCMS يستهدف المطورين.", "صفحة 5"],
@@ -141,7 +140,6 @@ const secondTermChoice = [
   ["التغذية الراجعة تكون فعالة أكثر لأنها:", ["مكتوبة بخط اليد", "فورية ومباشرة", "سرية", "تعتمد على العقاب"], "فورية ومباشرة", "سرعة تصحيح الخطأ.", "صفحة 12"],
 ];
 
-// ========== بيانات الأسئلة للامتحان الثالث ==========
 const thirdTermTrueFalse = [
   ["تُعتبر المعايير في التعليم الإلكتروني حالياً 'قواعد إلزامية نهائية' لا يمكن الحياد عنها وفقاً لـ ANSI.", "غلط", "تُعامل المعايير حالياً كـ 'مواصفات إرشادية' لأنها لا تزال في مرحلة النمو المستمر.", "صفحة 2"],
   ["تهدف المعايير بشكل أساسي إلى تقليل الوقت والجهد عبر بناء المقررات من الصفر في كل مرة.", "غلط", "تهدف لتقليل الجهد عبر توفير بنية تحتية جاهزة بدلاً من البدء من الصفر.", "صفحة 1"],
@@ -198,7 +196,6 @@ const thirdTermChoice = [
   ["'معايير تصميم نظم إدارة التعلم' تعتبر هي:", ["عائق أمام الإبداع", "اللغة المشتركة لضمان الجودة والتبادلية", "برامج مجانية للطلاب", "طرق بديلة للكتب الورقية فقط"], "اللغة المشتركة لضمان الجودة والتبادلية", "هي الضامن التقني والتربوي لعمل المنظومة بكفاءة عالمية.", "صفحة 1"],
 ];
 
-// ========== بيانات الأسئلة للامتحان الرابع ==========
 const fourthTermTrueFalse = [
   ["تعتبر نظم إدارة التعلم الذكية (SILMS) مجرد تحديث تقني للـ LMS التقليدي دون تغيير في جوهر الوظيفة.", "غلط", "هي 'جيل متطور' يغير الوظيفة من تقديم محتوى موحد إلى تقديم بيئة 'شخصية' تحاكي المعلم الخصوصي.", "صفحة 1"],
   ["'نموذج المتعلم' هو المسؤول عن تخزين المادة العلمية والطرق المثالية لحل المشكلات.", "غلط", "هذا تعريف 'نموذج المعلم / الخبير'؛ أما نموذج المتعلم فيخزن ملف الطالب الشخصي ومستواه.", "صفحة 2"],
@@ -255,7 +252,6 @@ const fourthTermChoice = [
   ["أي مما يلي يصف الـ (SILMS) بأفضل شكل؟", ["نظام يرفع الملفات فقط", "نظام يحاكي دور المعلم الخصوصي باستخدام الذكاء الاصطناعي", "نظام مخصص للمديرين فقط", "نظام يركز على المحتوى النصي فقط"], "نظام يحاكي دور المعلم الخصوصي باستخدام الذكاء الاصطناعي", "هذه هي الخلاصة التعريفية والوظيفية للنظام الذكي.", "صفحة 1"],
 ];
 
-// ========== بيانات الأسئلة للامتحان الخامس ==========
 const fifthTermTrueFalse = [
   ["معيار SCORM يضمن 'التبادلية' بين أنظمة إدارة التعلم المختلفة.", "صح", "التبادلية هي قدرة المحتوى على العمل على أي نظام متوافق مع SCORM.", "صفحة 3"],
   ["ملف XML في حزمة SCORM يعرف بـ 'imsmanifest.xml' ويحتوي على بنية المحتوى.", "صح", "هو الملف الإلزامي الذي يصف المحتوى وترتيبه.", "صفحة 4"],
@@ -365,38 +361,96 @@ if (examsGrid && !document.querySelector('.exam-item[data-exam="fifthExam"]')) {
   examsGrid.appendChild(btn);
 }
 
-// ========== إضافة التحسينات الجمالية ==========
+// ========== إضافة CSS للتحسينات الجمالية ==========
 const styleElem = document.createElement('style');
 styleElem.textContent = `
-  /* 3D Tilt */
-  .exam-item, .card, .option-btn { transition: transform 0.2s ease, box-shadow 0.2s; will-change: transform; }
-  .exam-item:hover, .card:hover, .option-btn:hover:not(:disabled) { transform: translateY(-5px) rotateX(2deg) rotateY(2deg); box-shadow: 0 15px 30px -12px rgba(0,0,0,0.5); }
-  /* شريط تقدم نيون */
-  .progress-fill { background: linear-gradient(90deg, #00f2fe, #4facfe, #00f2fe); background-size: 200% 100%; animation: neonMove 1.5s infinite, glowPulse 1s infinite alternate; box-shadow: 0 0 8px #00f2fe; }
-  @keyframes neonMove { 0% { background-position: 0% 0; } 100% { background-position: 200% 0; } }
-  @keyframes glowPulse { from { box-shadow: 0 0 5px #00f2fe; } to { box-shadow: 0 0 15px #4facfe; } }
-  /* عدادات متحركة */
-  .stat-value, .stat-card-sm span:first-child { transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); display: inline-block; }
-  .stat-value.updated, .stat-card-sm span:first-child.updated { transform: scale(1.3) rotate(5deg); color: #4facfe; text-shadow: 0 0 5px #00f2fe; }
-  /* زر التالي بموجة */
-  .btn-primary { position: relative; overflow: hidden; }
-  .btn-primary::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: left 0.5s; }
-  .btn-primary:hover::before { left: 100%; }
-  /* شريط جانبي تعليل */
-  .side-panel-hint { position: fixed; top: 0; right: -350px; width: 320px; height: 100%; background: rgba(20,30,50,0.95); backdrop-filter: blur(12px); border-left: 2px solid #3b82f6; z-index: 1000; transition: right 0.3s ease; padding: 1.5rem; color: white; overflow-y: auto; direction: rtl; }
-  .side-panel-hint.active { right: 0; }
-  .side-panel-hint .close-hint { position: absolute; top: 15px; left: 15px; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
-  /* Parallax */
-  body { background-attachment: fixed; }
-  /* اهتزاز */
-  .shake { animation: shake 0.3s ease-in-out 0s 2; }
-  @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
-  /* تحسين اللمس */
-  @media (max-width: 768px) { .option-btn, .btn-primary, .btn-secondary { padding: 12px 16px !important; font-size: 16px !important; } }
+  /* Glassmorphism & modern design */
+  .card, .exam-item, .option-btn, .btn-primary, .btn-secondary, .btn-outline {
+    backdrop-filter: blur(8px);
+    background: rgba(17, 24, 39, 0.75);
+    border-radius: 1.5rem !important;
+    border: 1px solid rgba(59,130,246,0.2);
+  }
+  .btn-primary, .btn-secondary, .btn-outline {
+    border-radius: 2rem !important;
+    padding: 0.6rem 1.5rem !important;
+  }
+  .option-btn {
+    border-radius: 1rem !important;
+  }
+  .card:hover, .exam-item:hover {
+    box-shadow: 0 8px 25px -5px rgba(59,130,246,0.5);
+    border-color: #3b82f6;
+  }
+  /* Neon progress bar */
+  .progress-fill {
+    background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff);
+    background-size: 200% 100%;
+    box-shadow: 0 0 10px #0072ff;
+    animation: neonMove 1.5s infinite;
+  }
+  @keyframes neonMove {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+  }
+  /* Wave effect on next button */
+  .btn-primary {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+  }
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+  /* Animated counters */
+  .stat-value, .stat-card-sm span:first-child {
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: inline-block;
+  }
+  .stat-value.updated, .stat-card-sm span:first-child.updated {
+    transform: scale(1.3) rotate(5deg);
+    color: #4facfe;
+    text-shadow: 0 0 5px #00f2fe;
+  }
+  /* Results panel glass */
+  .results-panel {
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+  }
+  .wrong-item {
+    background: rgba(239,68,68,0.15);
+    border-right: 3px solid #ef4444;
+  }
+  /* Certificate glow */
+  .certificate-screen:not(.hidden) .btn-primary {
+    animation: certificateGlow 1s infinite alternate;
+  }
+  @keyframes certificateGlow {
+    from { box-shadow: 0 0 5px #10b981; }
+    to { box-shadow: 0 0 20px #10b981; }
+  }
+  /* Shake effect */
+  .shake {
+    animation: shake 0.3s ease-in-out 0s 2;
+  }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
 `;
 document.head.appendChild(styleElem);
 
-// ========== جزيئات خلفية ==========
+// ========== جزيئات خلفية (Particles) ==========
 function initParticles() {
   const canvas = document.createElement('canvas');
   canvas.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; z-index:-2; pointer-events:none;';
@@ -424,7 +478,7 @@ function initParticles() {
 }
 initParticles();
 
-// ========== شاشة ترحيب ==========
+// ========== شاشة ترحيب مع شعار وبار تحميل ==========
 function showSplash() {
   const splash = document.createElement('div');
   splash.id = 'splash-screen';
@@ -436,17 +490,38 @@ function showSplash() {
 }
 showSplash();
 
-// ========== شريط تعليل ==========
-let hintPanel = null;
-function createHintPanel() {
-  if (hintPanel) return;
-  hintPanel = document.createElement('div');
-  hintPanel.className = 'side-panel-hint';
-  hintPanel.innerHTML = `<button class="close-hint">&times;</button><div id="hint-content" style="margin-top:50px;"><strong>تلميح:</strong><br/><span id="hint-text">...</span><br/><br/><strong>مرجع:</strong><br/><span id="ref-text">...</span></div>`;
-  document.body.appendChild(hintPanel);
-  hintPanel.querySelector('.close-hint').addEventListener('click', () => hintPanel.classList.remove('active'));
+// ========== زر التعليل القديم (شرح أسفل الخيارات) ==========
+let explanationDiv = null;
+function createExplanationDiv() {
+  if (explanationDiv) return;
+  explanationDiv = document.createElement('div');
+  explanationDiv.id = 'dynamic-explanation';
+  explanationDiv.style.cssText = `
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgba(59,130,246,0.1);
+    border-right: 4px solid #3b82f6;
+    border-radius: 0.75rem;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    display: none;
+    transition: all 0.2s;
+  `;
+  optionsList.parentNode.insertBefore(explanationDiv, optionsList.nextSibling);
 }
-createHintPanel();
+
+function showExplanation() {
+  if (!explanationDiv) createExplanationDiv();
+  const q = questions[current];
+  explanationDiv.innerHTML = `<strong>💡 التلميح:</strong> ${q.hint}<br><strong>📖 المرجع:</strong> ${q.reference}`;
+  explanationDiv.style.display = 'block';
+}
+
+function hideExplanation() {
+  if (explanationDiv) explanationDiv.style.display = 'none';
+}
+
+// ========== إزالة شريط الأرقام (القفز السريع) - لم نضفه أصلاً ==========
 
 // ========== عناصر DOM ==========
 const startScreen = document.getElementById('start-screen');
@@ -521,6 +596,7 @@ function renderQuestion() {
     btn.addEventListener('click', () => lockAnswer(ans));
     optionsList.appendChild(btn);
   });
+  hideExplanation();
   if (answered) showSavedAnswer(saved);
 }
 
@@ -615,11 +691,11 @@ homeIcon.addEventListener('click', () => { if (autoTimeout) clearTimeout(autoTim
 restartBtn.addEventListener('click', () => { if (autoTimeout) clearTimeout(autoTimeout); userAnswers = Array(questions.length).fill(null); current = 0; score = 0; answered = false; renderQuestion(); });
 nextBtn.addEventListener('click', () => { if (autoTimeout) clearTimeout(autoTimeout); if (!answered) { nextBtn.classList.add('shake'); setTimeout(() => nextBtn.classList.remove('shake'), 300); const msg = document.createElement('div'); msg.textContent = '⚠️ أجب على السؤال أولاً'; msg.style.cssText = 'position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#ef4444; color:white; padding:8px 16px; border-radius:20px; z-index:999;'; document.body.appendChild(msg); setTimeout(() => msg.remove(), 1500); return; } if (current < questions.length - 1) { current++; renderQuestion(); } else { showFinalResult(); } });
 prevBtn.addEventListener('click', () => { if (autoTimeout) clearTimeout(autoTimeout); if (current === 0) return; current--; renderQuestion(); });
-explanationTrigger.addEventListener('click', () => { const q = questions[current]; if (q && hintPanel) { hintPanel.querySelector('#hint-text').innerHTML = q.hint || 'لا يوجد تلميح.'; hintPanel.querySelector('#ref-text').innerHTML = q.reference || 'لا يوجد مرجع.'; hintPanel.classList.add('active'); } });
+explanationTrigger.addEventListener('click', () => { if (explanationDiv && explanationDiv.style.display === 'block') hideExplanation(); else showExplanation(); });
 document.querySelectorAll('.exam-item').forEach(btn => { btn.addEventListener('click', () => { const key = btn.dataset.exam; if (exams[key]) startExam(key); else alert('الامتحان غير متوفر'); }); });
 document.querySelectorAll('.demo-btn').forEach(btn => { btn.addEventListener('click', () => { const pwd = prompt('كلمة المرور:'); if (pwd === btn.dataset.password) startExam(btn.dataset.exam); else alert('كلمة مرور خاطئة'); }); });
 
-// ========== دعم اللمس ==========
+// ========== دعم اللمس (swipe) ==========
 let touchStartX = 0;
 document.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
 document.addEventListener('touchend', (e) => { const endX = e.changedTouches[0].screenX; if (endX < touchStartX - 50 && current < questions.length - 1 && answered) { current++; renderQuestion(); } else if (endX > touchStartX + 50 && current > 0) { current--; renderQuestion(); } });
